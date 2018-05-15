@@ -6,6 +6,7 @@ public class Bomb_Behavior : MonoBehaviour {
 
     public float explosion_countdown;
     public float effects_countdown;
+    public trap t;
     float spawn_time;
     float counter;
     bool boom = false;
@@ -20,7 +21,13 @@ public class Bomb_Behavior : MonoBehaviour {
         }
     }
 	
-    
+    public void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "P1")
+        {
+            col.gameObject.SetActive(false);
+        }
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -28,8 +35,6 @@ public class Bomb_Behavior : MonoBehaviour {
         if ((counter - spawn_time)>= explosion_countdown)
         {
          
-  
-
             if (boom == false)
             {
                 foreach (var c in GetComponents<Collider2D>())
@@ -38,10 +43,12 @@ public class Bomb_Behavior : MonoBehaviour {
                 }
                 boom = true;
                 explosion_countdown += effects_countdown;
-             
             }
             else
+            {
+                t.bombs ++;
                 Destroy(this.gameObject);
+            }
 
         }
 

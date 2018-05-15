@@ -5,6 +5,8 @@ using UnityEngine;
 public class trap : MonoBehaviour {
 
     public GameObject bomb_prefab;
+	public int bombs = 3;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -12,10 +14,12 @@ public class trap : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && bombs > 0)
         {
-            Instantiate(bomb_prefab).transform.position = transform.position;
-
+			GameObject bomb = Instantiate(bomb_prefab);
+            bomb.transform.position = transform.position;
+			bomb.GetComponent<Bomb_Behavior>().t = this;
+			bombs--;
         }
 	
 	}
