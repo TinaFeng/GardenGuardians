@@ -1,0 +1,978 @@
+fileFormatVersion: 2
+guid: 6544c55a58f747d47ba0470e505408c4
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Copy of RedPanda_Walking_Spritesheet_0
+    21300002: Copy of RedPanda_Walking_Spritesheet_1
+    21300004: Copy of RedPanda_Walking_Spritesheet_2
+    21300006: Copy of RedPanda_Walking_Spritesheet_3
+    21300008: Copy of RedPanda_Walking_Spritesheet_4
+    21300010: Copy of RedPanda_Walking_Spritesheet_5
+    21300012: Copy of RedPanda_Walking_Spritesheet_6
+    21300014: Copy of RedPanda_Walking_Spritesheet_7
+    21300016: Copy of RedPanda_Walking_Spritesheet_8
+    21300018: Copy of RedPanda_Walking_Spritesheet_9
+    21300020: Copy of RedPanda_Walking_Spritesheet_10
+    21300022: Copy of RedPanda_Walking_Spritesheet_11
+    21300024: Copy of RedPanda_Walking_Spritesheet_12
+    21300026: Copy of RedPanda_Walking_Spritesheet_13
+    21300028: Copy of RedPanda_Walking_Spritesheet_14
+    21300030: Copy of RedPanda_Walking_Spritesheet_15
+    21300032: Copy of RedPanda_Walking_Spritesheet_16
+    21300034: Copy of RedPanda_Walking_Spritesheet_17
+    21300036: Copy of RedPanda_Walking_Spritesheet_18
+    21300038: Copy of RedPanda_Walking_Spritesheet_19
+    21300040: Copy of RedPanda_Walking_Spritesheet_20
+    21300042: Copy of RedPanda_Walking_Spritesheet_21
+    21300044: Copy of RedPanda_Walking_Spritesheet_22
+    21300046: Copy of RedPanda_Walking_Spritesheet_23
+    21300048: Copy of RedPanda_Walking_Spritesheet_24
+    21300050: Copy of RedPanda_Walking_Spritesheet_25
+    21300052: Copy of RedPanda_Walking_Spritesheet_26
+    21300054: Copy of RedPanda_Walking_Spritesheet_27
+    21300056: Copy of RedPanda_Walking_Spritesheet_28
+    21300058: Copy of RedPanda_Walking_Spritesheet_29
+    21300060: Copy of RedPanda_Walking_Spritesheet_30
+    21300062: Copy of RedPanda_Walking_Spritesheet_31
+    21300064: Copy of RedPanda_Walking_Spritesheet_32
+    21300066: Copy of RedPanda_Walking_Spritesheet_33
+    21300068: Copy of RedPanda_Walking_Spritesheet_34
+    21300070: Copy of RedPanda_Walking_Spritesheet_35
+    21300072: Copy of RedPanda_Walking_Spritesheet_36
+    21300074: Copy of RedPanda_Walking_Spritesheet_37
+    21300076: Copy of RedPanda_Walking_Spritesheet_38
+    21300078: Copy of RedPanda_Walking_Spritesheet_39
+    21300080: Copy of RedPanda_Walking_Spritesheet_40
+  externalObjects: {}
+  serializedVersion: 5
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 2247
+        width: 384
+        height: 473
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d415df88d81c8747b31152ee6c332ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 2247
+        width: 386
+        height: 486
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626560710e33a1640a2e17178235199a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 2247
+        width: 384
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 653301a0fcd521140b5e3a0a6ff4aa79
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 2247
+        width: 386
+        height: 510
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86cae5d5f74a54b4294ec8d358478ca5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 2247
+        width: 385
+        height: 519
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d1010b9eaa40ab4dabc9cb108349792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 2119
+        y: 2247
+        width: 387
+        height: 527
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a559db0d1692978468da8e273e4747d9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 2541
+        y: 2247
+        width: 385
+        height: 534
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376ca03cc6094674bbdb91262d282871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 2961
+        y: 2247
+        width: 387
+        height: 539
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78050dae6c946924a90670cac4d2d9ba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 3381
+        y: 2247
+        width: 387
+        height: 541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e10a2801377f1d45a57c1cd0c9062f6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 1688
+        width: 386
+        height: 543
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6823302a5a85a444ea574c96b82f9029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1688
+        width: 386
+        height: 507
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ad2ae73bbfd18441a6b3589a7895d3f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 1688
+        width: 386
+        height: 446
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fb0638c08507fd4c919c675ee81b5d4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 1276
+        y: 1690
+        width: 386
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb5e43caa66b256438726ddd5d5feab1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 1697
+        y: 1690
+        width: 387
+        height: 435
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a581cc1b3059c245839f14b0c4144d2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 2118
+        y: 1690
+        width: 386
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87d1674fc232c164b80ae41949ce1fa2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 2539
+        y: 1690
+        width: 386
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cdfd8e9ff2c3bf4e8bfe779b65b227e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 2960
+        y: 1690
+        width: 386
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb7c580888c14804697497e971a9bff0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 3381
+        y: 1688
+        width: 385
+        height: 441
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00af017bd804ced40acc4507b2adec0e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 1129
+        width: 383
+        height: 448
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3c4370486bdfd4380d0e340fe94bc0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 1129
+        width: 381
+        height: 453
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f1eca62b2309c40a5c3d8f0a3562c7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 1129
+        width: 381
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69929ddd76df1c241ba393b4215bf494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 1128
+        width: 379
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d678feee90957c4eb94c3fa04f626a8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 1128
+        width: 378
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e2a4514af46a9c428aa900889036515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 2121
+        y: 1127
+        width: 376
+        height: 487
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfcfb104de64fc945b596f777d75cc72
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 2542
+        y: 1127
+        width: 374
+        height: 494
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba90f0be9c34014b99daf4519064ae5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 2963
+        y: 1127
+        width: 373
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae7e46f85078b640b288df768e14182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 3385
+        y: 1127
+        width: 370
+        height: 522
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73386f3f2d453fc43bf87f6d6e15b11d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 567
+        width: 368
+        height: 534
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f024564cc2ba4543b76cfd029991ddd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 567
+        width: 372
+        height: 536
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e6177cfdb67c1644be8e80ae2f48813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 567
+        width: 379
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7004482177d2dd64fb5ca08d25e533b6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 566
+        width: 376
+        height: 524
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d3ce9ca966b6840b6341c101b677f0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 565
+        width: 376
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa91aa6b1cac2a046a3f8fb610917b65
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 2124
+        y: 565
+        width: 378
+        height: 508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a60705ef195a664a84a60cf1fef2a24
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 2545
+        y: 567
+        width: 379
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 694f5fce63ff433459048865330b1752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 2965
+        y: 567
+        width: 381
+        height: 492
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa84845c16c55bf4f9e5dc91a74fdbd3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 3386
+        y: 567
+        width: 381
+        height: 485
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8dc6605f1146694791c878245d7da17
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 8
+        width: 381
+        height: 483
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a99d0cee99554204b814a97df2e5f2f2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 8
+        width: 382
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff63a8c6e48205747bedfd57c30575e2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 9
+        width: 384
+        height: 478
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a97fef69543b174286c00f6e5357249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 9
+        width: 383
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53f3a177901f744e839c57d5e1ced21
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Copy of RedPanda_Walking_Spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 9
+        width: 385
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c6d584ccaf6b4b4bacbcae8d4fffe9b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 08bf9dbe5697bea49be041d5aba0d2a3
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
