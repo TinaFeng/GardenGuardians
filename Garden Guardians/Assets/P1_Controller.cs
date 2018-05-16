@@ -10,7 +10,7 @@ public class P1_Controller : MonoBehaviour {
     Vector3 pos;                                // For movement
     public float speed = 5.0f;                         // Speed of movement
     public int player = 0;
-
+    public LayerMask mask;
     Vector3 Last_Move;
 
     GameObject P2;
@@ -46,7 +46,7 @@ public class P1_Controller : MonoBehaviour {
 
         if ((Input.GetKey(KeyCode.A) && transform.position == pos) && (pos + Vector3.left != P2.transform.position))
         {        // Left
-            if ((pos + Vector3.left).x >= initial.x)
+            if (((pos + Vector3.left).x >= initial.x)&&checkDirection(Vector2.left))
             {
                 Last_Move = pos;
                 pos += Vector3.left;
@@ -55,7 +55,7 @@ public class P1_Controller : MonoBehaviour {
         if (Input.GetKey(KeyCode.D) && transform.position == pos)
         {        // Right
 
-            if ((((pos+Vector3.right).x) <=initial.x + border-1) && (pos + Vector3.right != P2.transform.position))
+            if ((((pos+Vector3.right).x) <=initial.x + border-1) && (pos + Vector3.right != P2.transform.position) &&checkDirection(Vector2.right)) 
             {
                 Last_Move = pos;
                 pos += Vector3.right;
@@ -63,7 +63,7 @@ public class P1_Controller : MonoBehaviour {
         }
         if (Input.GetKey(KeyCode.W) && transform.position == pos)
         {        // Up
-            if(((pos + Vector3.up).y <= initial.y)&& (pos + Vector3.up != P2.transform.position))
+            if(((pos + Vector3.up).y <= initial.y)&& (pos + Vector3.up != P2.transform.position)&&checkDirection(Vector2.up))
             {
                 Last_Move = pos;
                 pos += Vector3.up;
@@ -71,7 +71,7 @@ public class P1_Controller : MonoBehaviour {
         }
         if (Input.GetKey(KeyCode.S) && transform.position == pos)
         {        // Down
-            if (((pos + Vector3.down).y >= initial.y - (border-1)) && (pos + Vector3.down != P2.transform.position))
+            if (((pos + Vector3.down).y >= initial.y - (border-1)) && (pos + Vector3.down != P2.transform.position)&&checkDirection(Vector2.down))
             {
                 Last_Move = pos;
                 pos += Vector3.down;
@@ -89,6 +89,17 @@ public class P1_Controller : MonoBehaviour {
     public void fallbackp1()
     {
         pos = Last_Move;
+    }
+
+    private bool checkDirection(Vector2 dir)
+    {
+        RaycastHit2D hit = Physics2D.Raycast((Vector2)pos,dir*2f,1f,mask);
+        if (hit.collider != null && hit.collider.gameObject.tag == "Walls")
+        {
+            return false;
+        }
+        return true;
+
     }
 }
 
