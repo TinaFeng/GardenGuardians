@@ -14,17 +14,30 @@ public class P1_Controller : MonoBehaviour {
     Vector3 Last_Move;
 
     GameObject P2;
+    GameObject Lantern;
     void Start()
     {
         initial = transform.position;
         pos = transform.position;          // Take the initial position
         P2 = GameObject.FindGameObjectWithTag("P2");
+        Lantern = transform.GetChild(0).gameObject;
     }
 
 
 
     void FixedUpdate()
     {
+        if (Lantern.activeInHierarchy)
+        {
+            GetComponent<SpriteRenderer>().enabled = true;
+        }
+        else
+            GetComponent<SpriteRenderer>().enabled = false;
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            ToggleLantern();
+        }
+
         if (transform.position == P2.transform.position)
         {
             fallbackp1();
@@ -66,9 +79,16 @@ public class P1_Controller : MonoBehaviour {
         }
         transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);    // Move there
     }
-
+    void ToggleLantern()
+    {
+        if (Lantern.activeInHierarchy)
+            Lantern.SetActive(false);
+        else
+            Lantern.SetActive(true);
+    }
     public void fallbackp1()
     {
         pos = Last_Move;
     }
 }
+
