@@ -7,12 +7,14 @@ public class Bomb_Behavior : MonoBehaviour {
     public float explosion_countdown;
     public float effects_countdown;
     public trap t;
+    public gameManager gM;
     float spawn_time;
     float counter;
     bool boom = false;
 	// Use this for initialization
 	void Start () {
 
+        gM = GameObject.Find("GameManager").GetComponent<gameManager>();
         spawn_time = Time.time;
         counter = spawn_time;
         foreach (var c in GetComponents<Collider2D>())
@@ -26,6 +28,8 @@ public class Bomb_Behavior : MonoBehaviour {
         if (col.gameObject.tag == "P1")
         {
             col.gameObject.SetActive(false);
+            gM.fadeIn();
+            
         }
     }
 
