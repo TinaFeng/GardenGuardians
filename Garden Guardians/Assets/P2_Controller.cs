@@ -94,7 +94,7 @@ public class P2_Controller : MonoBehaviour
     private bool checkDirection(Vector2 dir)
     {
         RaycastHit2D hit = Physics2D.Raycast((Vector2)pos,dir*2f,1f,mask);
-        if (hit.collider != null && hit.collider.gameObject.tag == "Walls")
+        if (hit.collider != null && (hit.collider.gameObject.tag == "Walls" || hit.collider.gameObject.tag == "P1"))
         {
             return false;
         }

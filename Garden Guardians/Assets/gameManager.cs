@@ -36,7 +36,7 @@ public class gameManager : MonoBehaviour {
 		}
 		else
 		{
-			if (!fadeIn)
+			if (!fadein)
 				GetComponent<Light>().enabled = false;
 		}
 	}
