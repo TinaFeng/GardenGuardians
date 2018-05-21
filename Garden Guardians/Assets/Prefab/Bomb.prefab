@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50069500010072756}
   - component: {fileID: 66630443923522400}
   - component: {fileID: 114049189812544228}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bomb
   m_TagString: Trap
   m_Icon: {fileID: 0}
@@ -148,6 +148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion_countdown: 3
   effects_countdown: 2
+  t: {fileID: 0}
+  gM: {fileID: 0}
 --- !u!212 &212286734513918480
 SpriteRenderer:
   m_ObjectHideFlags: 1
