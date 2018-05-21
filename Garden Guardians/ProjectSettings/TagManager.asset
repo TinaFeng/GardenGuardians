@@ -9,6 +9,7 @@ TagManager:
   - P2
   - Trap
   - Walls
+  - Item
   layers:
   - Default
   - TransparentFX

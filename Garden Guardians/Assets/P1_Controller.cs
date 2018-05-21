@@ -15,15 +15,21 @@ public class P1_Controller : MonoBehaviour {
 
     GameObject P2;
     GameObject Lantern;
+
+    GameObject[] Item_List;
     void Start()
     {
         initial = transform.position;
         pos = transform.position;          // Take the initial position
         P2 = GameObject.FindGameObjectWithTag("P2");
         Lantern = transform.GetChild(0).gameObject;
+        Item_List = new GameObject[3];
     }
 
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+    }
 
     void FixedUpdate()
     {
@@ -73,7 +79,8 @@ public class P1_Controller : MonoBehaviour {
         {        // Down
             if (((pos + Vector3.down).y >= initial.y - (border-1)) && (pos + Vector3.down != P2.transform.position)&&checkDirection(Vector2.down))
             {
-                Last_Move = pos;
+                OnItemhit(Vector2.down);
+               Last_Move = pos;
                 pos += Vector3.down;
             }
         }
@@ -94,6 +101,7 @@ public class P1_Controller : MonoBehaviour {
     private bool checkDirection(Vector2 dir)
     {
         RaycastHit2D hit = Physics2D.Raycast((Vector2)pos,dir*2f,1f,mask);
+
         if (hit.collider != null && hit.collider.gameObject.tag == "Walls")
         {
             return false;
@@ -101,5 +109,17 @@ public class P1_Controller : MonoBehaviour {
         return true;
 
     }
+    
+    void OnItemhit(Vector2 dir)
+    {
+        RaycastHit2D hit = Physics2D.Raycast((Vector2)pos, dir * 2f, 1f);
+        if (hit.collider != null && hit.collider.gameObject.tag == "Item")
+        {
+            Debug.Log("yo");
+        }
+
+    }
+
+
 }
 
