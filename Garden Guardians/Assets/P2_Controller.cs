@@ -50,32 +50,44 @@ public class P2_Controller : MonoBehaviour
             {
                 Last_Move = pos;
                 pos += Vector3.left;
+                if (!GetComponent<Animator>().GetBool("Walking")) GetComponent<Animator>().SetBool("Walking",true);
+                GetComponent<Animator>().SetInteger("Direction",3);
             }
         }
-        if (Input.GetKey(KeyCode.L) && transform.position == pos)
+        else if (Input.GetKey(KeyCode.L) && transform.position == pos)
         {        // Right
 
             if ((((pos + Vector3.right).x)  <= initial.x)&& (pos + Vector3.right != P1.transform.position)&&checkDirection(Vector2.right))
             {
                 Last_Move = pos;
                 pos += Vector3.right;
+                if (!GetComponent<Animator>().GetBool("Walking")) GetComponent<Animator>().SetBool("Walking",true);
+                GetComponent<Animator>().SetInteger("Direction",1);
             }
         }
-        if (Input.GetKey(KeyCode.I) && transform.position == pos)
+        else if (Input.GetKey(KeyCode.I) && transform.position == pos)
         {        // Up
             if (((pos + Vector3.up).y <= initial.y + (border - 1))&& (pos + Vector3.up != P1.transform.position)&&checkDirection(Vector2.up))
             {
                 Last_Move = pos;
                 pos += Vector3.up;
+                if (!GetComponent<Animator>().GetBool("Walking")) GetComponent<Animator>().SetBool("Walking",true);
+                GetComponent<Animator>().SetInteger("Direction",2);
             }
         }
-        if (Input.GetKey(KeyCode.K) && transform.position == pos)
+        else if (Input.GetKey(KeyCode.K) && transform.position == pos)
         {        // Down
             if (((pos + Vector3.down).y >= initial.y)&& (pos + Vector3.down != P1.transform.position)&&checkDirection(Vector2.down))
             {
                 Last_Move = pos;
                 pos += Vector3.down;
+                if (!GetComponent<Animator>().GetBool("Walking")) GetComponent<Animator>().SetBool("Walking",true);
+                GetComponent<Animator>().SetInteger("Direction",0);
             }
+        }
+        else if (transform.position == pos)
+        {
+            GetComponent<Animator>().SetBool("Walking",false);
         }
         transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);    // Move there
     }

@@ -71,39 +71,51 @@ public class P1_Controller : MonoBehaviour {
             P2.GetComponent<P2_Controller>().fallbackp2();
         }
 
-        if ((Input.GetKey(KeyCode.A) && transform.position == pos) && (pos + Vector3.left != P2.transform.position))
+        if ((Input.GetKey(KeyCode.A) && transform.position == pos) )
         {        // Left
-            if (((pos + Vector3.left).x >= initial.x)&&checkDirection(Vector2.left))
+            if (((pos + Vector3.left).x >= initial.x)&&checkDirection(Vector2.left)&& (pos + Vector3.left != P2.transform.position))
             {
                 Last_Move = pos;
                 pos += Vector3.left;
+                if (!GetComponent<Animator>().GetBool("Walking")) GetComponent<Animator>().SetBool("Walking",true);
+                GetComponent<Animator>().SetInteger("Direction",3);
             }
         }
-        if (Input.GetKey(KeyCode.D) && transform.position == pos)
+        else if (Input.GetKey(KeyCode.D) && transform.position == pos)
         {        // Right
 
             if ((((pos+Vector3.right).x) <=initial.x + border-1) && (pos + Vector3.right != P2.transform.position) &&checkDirection(Vector2.right)) 
             {
                 Last_Move = pos;
                 pos += Vector3.right;
+                if (!GetComponent<Animator>().GetBool("Walking")) GetComponent<Animator>().SetBool("Walking",true);
+                GetComponent<Animator>().SetInteger("Direction",1);
             }
         }
-        if (Input.GetKey(KeyCode.W) && transform.position == pos)
+        else if (Input.GetKey(KeyCode.W) && transform.position == pos)
         {        // Up
             if(((pos + Vector3.up).y <= initial.y)&& (pos + Vector3.up != P2.transform.position)&&checkDirection(Vector2.up))
             {
                 Last_Move = pos;
                 pos += Vector3.up;
+                if (!GetComponent<Animator>().GetBool("Walking")) GetComponent<Animator>().SetBool("Walking",true);
+                GetComponent<Animator>().SetInteger("Direction",2);
             }
         }
-        if (Input.GetKey(KeyCode.S) && transform.position == pos)
+        else if (Input.GetKey(KeyCode.S) && transform.position == pos)
         {        // Down
             if (((pos + Vector3.down).y >= initial.y - (border-1)) && (pos + Vector3.down != P2.transform.position)&&checkDirection(Vector2.down))
             {
 
                Last_Move = pos;
                 pos += Vector3.down;
+                if (!GetComponent<Animator>().GetBool("Walking")) GetComponent<Animator>().SetBool("Walking",true);
+                GetComponent<Animator>().SetInteger("Direction",0);
             }
+        }
+        else if (transform.position == pos)
+        {
+            GetComponent<Animator>().SetBool("Walking",false);
         }
         transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);    // Move there
     }
