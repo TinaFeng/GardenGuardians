@@ -9,7 +9,9 @@ TagManager:
   - P2
   - Trap
   - Walls
-  - Item
+  - Sensor
+  - Blocker
+  - Bomb
   layers:
   - Default
   - TransparentFX

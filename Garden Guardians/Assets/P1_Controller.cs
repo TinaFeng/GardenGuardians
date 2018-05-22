@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class P1_Controller : MonoBehaviour {
 
     public int border = 10; //size of the board for calculating borders
@@ -11,28 +11,49 @@ public class P1_Controller : MonoBehaviour {
     public float speed = 5.0f;                         // Speed of movement
     public int player = 0;
     public LayerMask mask;
+    public GameObject Inventory;  //the display
     Vector3 Last_Move;
 
     GameObject P2;
     GameObject Lantern;
 
-    GameObject[] Item_List;
+    List<string> Item_List;
+    public GameObject Sensor;
+    public GameObject Bomb;
+    List<GameObject> Item_names;
+//    public GameObject Blocker;
     void Start()
     {
         initial = transform.position;
         pos = transform.position;          // Take the initial position
         P2 = GameObject.FindGameObjectWithTag("P2");
         Lantern = transform.GetChild(0).gameObject;
-        Item_List = new GameObject[3];
+        Item_List = new List<string>() ;
+
+        Item_names = new List<GameObject>();
+        Item_names.Add(Sensor.gameObject);
+        Item_names.Add(Bomb.gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log(collision.gameObject.name);
-    }
+
 
     void FixedUpdate()
     {
+        //item dropping mechanics
+        if (Input.GetKeyDown(KeyCode.Z)) // 1
+        {
+            SetupItem(0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.X)) // 1
+        {
+            SetupItem(1);
+        }
+        if (Input.GetKeyDown(KeyCode.C)) // 1
+        {
+            SetupItem(2); 
+        }
+
         if (Lantern.activeInHierarchy)
         {
             GetComponent<SpriteRenderer>().enabled = true;
@@ -79,7 +100,7 @@ public class P1_Controller : MonoBehaviour {
         {        // Down
             if (((pos + Vector3.down).y >= initial.y - (border-1)) && (pos + Vector3.down != P2.transform.position)&&checkDirection(Vector2.down))
             {
-                OnItemhit(Vector2.down);
+
                Last_Move = pos;
                 pos += Vector3.down;
             }
@@ -101,7 +122,12 @@ public class P1_Controller : MonoBehaviour {
     private bool checkDirection(Vector2 dir)
     {
         RaycastHit2D hit = Physics2D.Raycast((Vector2)pos,dir*2f,1f,mask);
-        if (hit.collider != null && (hit.collider.gameObject.tag == "Walls" || hit.collider.gameObject.tag == "P2"))
+        if (hit.collider != null && (hit.collider.gameObject.tag== "Sensor"|| hit.collider.gameObject.tag =="Bomb")) 
+        {
+            //pick up  
+            pickup(hit.collider.gameObject);
+        }
+            if (hit.collider != null && (hit.collider.gameObject.tag == "Walls" || hit.collider.gameObject.tag == "P2"))
         {
             return false;
         }
@@ -109,16 +135,46 @@ public class P1_Controller : MonoBehaviour {
 
     }
     
-    void OnItemhit(Vector2 dir)
+    void pickup(GameObject item)
     {
-        RaycastHit2D hit = Physics2D.Raycast((Vector2)pos, dir * 2f, 1f);
-        if (hit.collider != null && hit.collider.gameObject.tag == "Item")
+        if (Item_List.Count <3) // if we still has room
         {
-            Debug.Log("yo");
+            Item_List.Add(item.tag);
+            Destroy(item.gameObject);
+           Inventory.transform.GetChild(Item_List.LastIndexOf(item.tag) + 1).GetComponent<Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
         }
-
     }
 
+    void SetupItem(int index)
+    {
+        Debug.Log(Item_List[index]);
+        GameObject trap = Instantiate(FindPrefab(Item_List[index]));
+        trap.transform.position = this.transform.position;
+        Item_List.Remove(Item_List[index]);
+        
+        Inventory.transform.GetChild(index+1).GetComponent<Image>().sprite = Resources.Load<Sprite>("Item_Empty");
+    }
+    
+    void UpdateInventory()
+    {
+        for(int i = 0; i!= Item_List.Count; i++)
+        {
+            Inventory.transform.GetChild(i+ 1).GetComponent<Image>().sprite = FindPrefab(Item_List[i]).GetComponent<SpriteRenderer>().sprite;
+        }
+    }
+
+
+    GameObject FindPrefab(string name)
+    {
+
+        for (int i = 0; i!= Item_names.Count; i++)
+        {
+    
+            if (Item_names[i].name == name)
+                return Item_names[i];
+        }
+        return null;
+    }
 
 }
 
