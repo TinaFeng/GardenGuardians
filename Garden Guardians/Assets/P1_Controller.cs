@@ -39,6 +39,7 @@ public class P1_Controller : MonoBehaviour {
 
     void FixedUpdate()
     {
+        vision();
         //item dropping mechanics
         if (Input.GetKeyDown(KeyCode.Z)) // 1
         {
@@ -134,7 +135,9 @@ public class P1_Controller : MonoBehaviour {
     private bool checkDirection(Vector2 dir)
     {
         RaycastHit2D hit = Physics2D.Raycast((Vector2)pos,dir*2f,1f,mask);
-        if (hit.collider != null && (hit.collider.gameObject.tag== "Sensor"|| hit.collider.gameObject.tag =="Bomb")) 
+
+
+            if (hit.collider != null && (hit.collider.gameObject.tag== "Sensor"|| hit.collider.gameObject.tag =="Bomb")) 
         {
             //pick up  
             pickup(hit.collider.gameObject);
@@ -146,7 +149,24 @@ public class P1_Controller : MonoBehaviour {
         return true;
 
     }
-    
+
+    void vision()
+
+    {
+
+        RaycastHit2D light_check = Physics2D.CircleCast((Vector2)pos, 3f, new Vector2(3,3),mask);
+
+       
+            if (light_check.collider != null && light_check.collider.gameObject.tag == "P2")
+            {
+            P2.GetComponent<P2_Controller>().spotted();
+            }
+
+
+    }
+
+
+
     void pickup(GameObject item)
     {
         if (Item_List.Count <3) // if we still has room

@@ -103,6 +103,11 @@ public class P2_Controller : MonoBehaviour
         pos = Last_Move;
     }
 
+    public void spotted()
+    {
+        GetComponent<SpriteRenderer>().enabled = true;
+    }
+
     private bool checkDirection(Vector2 dir)
     {
         RaycastHit2D hit = Physics2D.Raycast((Vector2)pos,dir*2f,1f,mask);
