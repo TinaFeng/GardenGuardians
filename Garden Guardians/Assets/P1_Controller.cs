@@ -12,10 +12,12 @@ public class P1_Controller : MonoBehaviour {
     public int player = 0;
     public LayerMask mask;
     public GameObject Inventory;  //the display
+    private bool spriteOn = false;
+    private bool spotting = false;
     Vector3 Last_Move;
 
     GameObject P2;
-    GameObject Lantern;
+    Light Lantern;
 
     List<string> Item_List;
     public GameObject Sensor;
@@ -27,7 +29,7 @@ public class P1_Controller : MonoBehaviour {
         initial = transform.position;
         pos = transform.position;          // Take the initial position
         P2 = GameObject.FindGameObjectWithTag("P2");
-        Lantern = transform.GetChild(0).gameObject;
+        Lantern = transform.GetChild(0).GetComponent<Light>();
         Item_List = new List<string>() ;
 
         Item_names = new List<GameObject>();
@@ -37,7 +39,7 @@ public class P1_Controller : MonoBehaviour {
 
 
 
-    void FixedUpdate()
+    void Update()
     {
         vision();
         //item dropping mechanics
@@ -55,16 +57,12 @@ public class P1_Controller : MonoBehaviour {
             SetupItem(2); 
         }
 
-        if (Lantern.activeInHierarchy)
-        {
-            GetComponent<SpriteRenderer>().enabled = true;
-        }
-        else
-            GetComponent<SpriteRenderer>().enabled = false;
         if (Input.GetKeyDown(KeyCode.F))
         {
             ToggleLantern();
         }
+
+        GetComponent<SpriteRenderer>().enabled = spriteOn || Lantern.enabled;
 
         if (transform.position == P2.transform.position)
         {
@@ -122,10 +120,7 @@ public class P1_Controller : MonoBehaviour {
     }
     void ToggleLantern()
     {
-        if (Lantern.activeInHierarchy)
-            Lantern.SetActive(false);
-        else
-            Lantern.SetActive(true);
+        Lantern.enabled = !Lantern.enabled;
     }
     public void fallbackp1()
     {
@@ -137,12 +132,12 @@ public class P1_Controller : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast((Vector2)pos,dir*2f,1f,mask);
 
 
-            if (hit.collider != null && (hit.collider.gameObject.tag== "Sensor"|| hit.collider.gameObject.tag =="Bomb")) 
+        if (hit.collider != null && (hit.collider.gameObject.tag== "Sensor"|| hit.collider.gameObject.tag =="Bomb")) 
         {
             //pick up  
             pickup(hit.collider.gameObject);
         }
-            if (hit.collider != null && (hit.collider.gameObject.tag == "Walls" || hit.collider.gameObject.tag == "P2"))
+        if (hit.collider != null && (hit.collider.gameObject.tag == "Walls" || hit.collider.gameObject.tag == "P2"))
         {
             return false;
         }
@@ -154,17 +149,27 @@ public class P1_Controller : MonoBehaviour {
 
     {
 
-        RaycastHit2D light_check = Physics2D.CircleCast((Vector2)pos, 3f, new Vector2(3,3),mask);
-
+        RaycastHit2D light_check = Physics2D.Raycast((Vector2)pos, (Vector2)P2.transform.position - (Vector2)pos, 2f,mask);
        
-            if (light_check.collider != null && light_check.collider.gameObject.tag == "P2")
+            if (Lantern.enabled && light_check.collider != null && light_check.collider.gameObject.tag == "P2")
             {
-            P2.GetComponent<P2_Controller>().spotted();
+                P2.GetComponent<P2_Controller>().spotted(true);
+                spotting = true;
+            }
+            else if (spotting)
+            {
+                P2.GetComponent<P2_Controller>().spotted(false);
+                spotting = false;
             }
 
 
     }
 
+    public void spotted(bool s)
+    {
+        spriteOn = s;
+        //GetComponent<SpriteRenderer>().enabled = true;
+    }
 
 
     void pickup(GameObject item)

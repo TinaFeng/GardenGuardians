@@ -13,36 +13,39 @@ public class P2_Controller : MonoBehaviour
     public int player = 0;
     public LayerMask mask;
 
+    private bool spriteOn = false;
+    private bool spotting = false;
+
     GameObject P1;
 
     Vector3 Last_Move;
-    GameObject Lantern;
+    Light Lantern;
     void Start()
     {
         initial = transform.position;
         pos = transform.position;          // Take the initial position
         P1 = GameObject.FindGameObjectWithTag("P1");
-        Lantern = transform.GetChild(0).gameObject;
+        Lantern = transform.GetChild(0).GetComponent<Light>();
+
     }
 
-
-    void FixedUpdate()
+    void Update()
     {
-        if (Lantern.activeInHierarchy)
-        {
-            GetComponent<SpriteRenderer>().enabled = true;
-        }
-        else
-            GetComponent<SpriteRenderer>().enabled = false;
+        vision();
+
         if (Input.GetKeyDown(KeyCode.H))
         {
             ToggleLantern();
         }
+
+        GetComponent<SpriteRenderer>().enabled = spriteOn || Lantern.enabled;
+
         if (transform.position == P1.transform.position)
         {
             fallbackp2();
             P1.GetComponent<P1_Controller>().fallbackp1();
         }
+
         if (Input.GetKey(KeyCode.J) && transform.position == pos)
         {        // Left
 
@@ -93,19 +96,38 @@ public class P2_Controller : MonoBehaviour
     }
     void ToggleLantern()
     {
-        if (Lantern.activeInHierarchy)
-            Lantern.SetActive(false);
-        else
-            Lantern.SetActive(true);
+        Lantern.enabled = !Lantern.enabled;
     }
     public void fallbackp2()
     {
         pos = Last_Move;
     }
 
-    public void spotted()
+    void vision()
+
     {
-        GetComponent<SpriteRenderer>().enabled = true;
+
+        RaycastHit2D light_check = Physics2D.Raycast((Vector2)pos, (Vector2)P1.transform.position - (Vector2)pos, 2f,mask);
+       
+            if (Lantern.enabled && light_check.collider != null && light_check.collider.gameObject.tag == "P1")
+            {
+                P1.GetComponent<P1_Controller>().spotted(true);
+                spotting = true;
+            }
+            else if (spotting)
+            {
+                P1.GetComponent<P1_Controller>().spotted(false);
+                spotting = false;
+            }
+
+
+    }
+
+
+    public void spotted(bool s)
+    {
+        spriteOn = s;
+        //GetComponent<SpriteRenderer>().enabled = true;
     }
 
     private bool checkDirection(Vector2 dir)
