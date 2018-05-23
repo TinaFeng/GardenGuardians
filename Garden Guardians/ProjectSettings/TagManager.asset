@@ -12,6 +12,8 @@ TagManager:
   - Sensor
   - Blocker
   - Bomb
+  - Flower
+  - Timer
   layers:
   - Default
   - TransparentFX

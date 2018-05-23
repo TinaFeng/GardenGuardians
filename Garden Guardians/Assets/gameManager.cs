@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class gameManager : MonoBehaviour {
 
 	public float duration = 1;
@@ -10,15 +10,29 @@ public class gameManager : MonoBehaviour {
 	private float elapsed;
 	private bool fadein = false;
 
+
+    bool start = false;
+    public float timer = 60;
+    Text time;
 	// Use this for initialization
 	void Start () {
 		elapsed = duration;
+        time = GameObject.FindGameObjectWithTag("Timer").GetComponent<Text>();
 	}
 	
 
 	// Update is called once per frame
 	void Update () {
-		
+
+        if (start)
+        {
+            timer -= Time.deltaTime;
+            time.text = "Time: " + Mathf.RoundToInt(timer).ToString();
+            if (Mathf.RoundToInt(timer)<= 10)
+            {
+                time.color = Color.red;
+            }
+        }
 		if (fadeWait > 0)
 		{
 			fadeWait-= Time.deltaTime;
@@ -38,6 +52,7 @@ public class gameManager : MonoBehaviour {
 		{
 			if (!fadein)
 				GetComponent<Light>().enabled = false;
+            start = true;
 		}
 	}
 

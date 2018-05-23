@@ -17,7 +17,7 @@ public class P2_Controller : MonoBehaviour
     private bool spotting = false;
 
     GameObject P1;
-
+    public gameManager gM;
     Vector3 Last_Move;
     Light Lantern;
     void Start()
@@ -26,7 +26,7 @@ public class P2_Controller : MonoBehaviour
         pos = transform.position;          // Take the initial position
         P1 = GameObject.FindGameObjectWithTag("P1");
         Lantern = transform.GetChild(0).GetComponent<Light>();
-
+        gM = GameObject.Find("GameManager").GetComponent<gameManager>();
     }
 
     void Update()
@@ -133,6 +133,12 @@ public class P2_Controller : MonoBehaviour
     private bool checkDirection(Vector2 dir)
     {
         RaycastHit2D hit = Physics2D.Raycast((Vector2)pos,dir*2f,1f,mask);
+        if (hit.collider != null && hit.collider.gameObject.tag == "Flower")
+        {
+            //Kobold wins
+            Destroy(hit.collider.gameObject);
+            gM.fadeIn();
+        }
         if (hit.collider != null && (hit.collider.gameObject.tag == "Walls" || hit.collider.gameObject.tag == "P1"))
         {
             return false;
