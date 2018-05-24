@@ -28,7 +28,7 @@ public class Bomb_Behavior : MonoBehaviour {
         if (col.gameObject.tag == "P2")
         {
             col.gameObject.SetActive(false);
-            gM.fadeIn();
+            gM.endRound("P1");
             
         }
     }

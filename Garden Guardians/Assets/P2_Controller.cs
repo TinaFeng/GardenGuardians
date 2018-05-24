@@ -146,7 +146,7 @@ public class P2_Controller : MonoBehaviour
         if (Item_List.Count == 3)
         {
             //Kobold Victory
-            gM.fadeIn();
+            gM.endRound("P2");
         }
     }
 
