@@ -8,10 +8,19 @@ public class ScoreManager : MonoBehaviour {
     private int p1Wins = 0, p2Wins = 0, totalMatches = 0;
     public string roundWinner = "";
     private bool flipped = false;
+    private static bool alreadyExists = false;
 
     void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (!alreadyExists)
+        {
+            alreadyExists = true;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 	// Use this for initialization

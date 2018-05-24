@@ -10,6 +10,8 @@ public class gameManager : MonoBehaviour {
 	private float elapsed;
 	private bool fadein = false;
 
+    private ScoreManager scrMngr;
+
 
     bool start = false;
     public float timer = 60;
@@ -19,6 +21,7 @@ public class gameManager : MonoBehaviour {
 	void Start () {
 		elapsed = duration;
         time = GameObject.FindGameObjectWithTag("Timer").GetComponent<Text>();
+        scrMngr = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
 	}
 	
 
@@ -69,6 +72,7 @@ public class gameManager : MonoBehaviour {
 
     public void endRound(string winner)
     {
+        scrMngr.roundWinner = winner;
         fadeIn();
     }
 }
