@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class P2_Controller : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class P2_Controller : MonoBehaviour
     public float speed = 5.0f;                         // Speed of movement
     public int player = 0;
     public LayerMask mask;
-
+    public GameObject Inventory; 
     private bool spriteOn = false;
     private bool spotting = false;
 
@@ -20,6 +21,7 @@ public class P2_Controller : MonoBehaviour
     public gameManager gM;
     Vector3 Last_Move;
     Light Lantern;
+    Dictionary<int,string> Item_List;
     void Start()
     {
         initial = transform.position;
@@ -27,6 +29,7 @@ public class P2_Controller : MonoBehaviour
         P1 = GameObject.FindGameObjectWithTag("P1");
         Lantern = transform.GetChild(0).GetComponent<Light>();
         gM = GameObject.Find("GameManager").GetComponent<gameManager>();
+        Item_List = new Dictionary<int,string>();
     }
 
     void Update()
@@ -123,6 +126,30 @@ public class P2_Controller : MonoBehaviour
 
     }
 
+    void pickup(GameObject item)
+    {
+        if (Item_List.Count <3) // if we still has room
+        {
+            int i = 0;
+            for(; i < 3;++i)
+            {
+                if (!Item_List.ContainsKey(i))
+                {
+                    Item_List[i] = item.tag;
+                    break;
+                }
+            }
+            
+            Destroy(item.gameObject);
+            Inventory.transform.GetChild(i + 1).GetComponent<Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
+        }
+        if (Item_List.Count == 3)
+        {
+            //Kobold Victory
+            gM.fadeIn();
+        }
+    }
+
 
     public void spotted(bool s)
     {
@@ -135,9 +162,7 @@ public class P2_Controller : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast((Vector2)pos,dir*2f,1f,mask);
         if (hit.collider != null && hit.collider.gameObject.tag == "Flower")
         {
-            //Kobold wins
-            Destroy(hit.collider.gameObject);
-            gM.fadeIn();
+            pickup(hit.collider.gameObject);
         }
         if (hit.collider != null && (hit.collider.gameObject.tag == "Walls" || hit.collider.gameObject.tag == "P1"))
         {

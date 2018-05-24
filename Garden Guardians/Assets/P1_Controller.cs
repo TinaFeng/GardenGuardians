@@ -30,7 +30,7 @@ public class P1_Controller : MonoBehaviour {
         pos = transform.position;          // Take the initial position
         P2 = GameObject.FindGameObjectWithTag("P2");
         Lantern = transform.GetChild(0).GetComponent<Light>();
-        Item_List = new Dictionary<int,string>() ;
+        Item_List = new Dictionary<int,string>();
 
         Item_names = new List<GameObject>();
         Item_names.Add(Sensor.gameObject);
@@ -43,16 +43,16 @@ public class P1_Controller : MonoBehaviour {
     {
         vision();
         //item dropping mechanics
-        if (Input.GetKeyDown(KeyCode.Z)) // 1
+        if (Input.GetKeyDown(KeyCode.Alpha1)) // 1
         {
             SetupItem(0);
         }
 
-        if (Input.GetKeyDown(KeyCode.X)) // 1
+        if (Input.GetKeyDown(KeyCode.Alpha2)) // 1
         {
             SetupItem(1);
         }
-        if (Input.GetKeyDown(KeyCode.C)) // 1
+        if (Input.GetKeyDown(KeyCode.Alpha3)) // 1
         {
             SetupItem(2); 
         }
@@ -193,7 +193,9 @@ public class P1_Controller : MonoBehaviour {
 
     void SetupItem(int index)
     {
-        Debug.Log(Item_List[index]);
+        if (!Item_List.ContainsKey(index))
+            return;
+
         GameObject trap = Instantiate(FindPrefab(Item_List[index]));
         trap.transform.position = this.transform.position;
         Item_List.Remove(index);
