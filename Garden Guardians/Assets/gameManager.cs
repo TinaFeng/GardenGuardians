@@ -13,6 +13,7 @@ public class gameManager : MonoBehaviour {
 
     bool start = false;
     public float timer = 60;
+    private bool timerEnded = false;
     Text time;
 	// Use this for initialization
 	void Start () {
@@ -23,8 +24,12 @@ public class gameManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
-        if (start)
+        if(timer < 0)
+        {
+            timerEnded = true;
+            endRound("P1");
+        }
+        if (start && !timerEnded)
         {
             timer -= Time.deltaTime;
             time.text = "Time: " + Mathf.RoundToInt(timer).ToString();
@@ -56,9 +61,14 @@ public class gameManager : MonoBehaviour {
 		}
 	}
 
-	public void fadeIn()
+	private void fadeIn()
 	{
 		GetComponent<Light>().enabled = true;
 		fadein = true;
 	}
+
+    public void endRound(string winner)
+    {
+        fadeIn();
+    }
 }
