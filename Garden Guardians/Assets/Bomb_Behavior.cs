@@ -25,7 +25,7 @@ public class Bomb_Behavior : MonoBehaviour {
 	
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "P1")
+        if (col.gameObject.tag == "P2")
         {
             col.gameObject.SetActive(false);
             gM.fadeIn();
@@ -50,7 +50,7 @@ public class Bomb_Behavior : MonoBehaviour {
             }
             else
             {
-                t.bombs ++;
+                if (t != null) t.bombs ++;
                 Destroy(this.gameObject);
             }
 

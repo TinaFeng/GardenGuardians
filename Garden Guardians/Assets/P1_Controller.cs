@@ -19,7 +19,7 @@ public class P1_Controller : MonoBehaviour {
     GameObject P2;
     Light Lantern;
 
-    List<string> Item_List;
+    Dictionary<int,string> Item_List;
     public GameObject Sensor;
     public GameObject Bomb;
     List<GameObject> Item_names;
@@ -30,7 +30,7 @@ public class P1_Controller : MonoBehaviour {
         pos = transform.position;          // Take the initial position
         P2 = GameObject.FindGameObjectWithTag("P2");
         Lantern = transform.GetChild(0).GetComponent<Light>();
-        Item_List = new List<string>() ;
+        Item_List = new Dictionary<int,string>() ;
 
         Item_names = new List<GameObject>();
         Item_names.Add(Sensor.gameObject);
@@ -72,7 +72,7 @@ public class P1_Controller : MonoBehaviour {
 
         if ((Input.GetKey(KeyCode.A) && transform.position == pos) )
         {        // Left
-            if (((pos + Vector3.left).x >= initial.x)&&checkDirection(Vector2.left)&& (pos + Vector3.left != P2.transform.position))
+            if (checkDirection(Vector2.left)&& (pos + Vector3.left != P2.transform.position))
             {
                 Last_Move = pos;
                 pos += Vector3.left;
@@ -83,7 +83,7 @@ public class P1_Controller : MonoBehaviour {
         else if (Input.GetKey(KeyCode.D) && transform.position == pos)
         {        // Right
 
-            if ((((pos+Vector3.right).x) <=initial.x + border-1) && (pos + Vector3.right != P2.transform.position) &&checkDirection(Vector2.right)) 
+            if (((pos + Vector3.right != P2.transform.position) &&checkDirection(Vector2.right))) 
             {
                 Last_Move = pos;
                 pos += Vector3.right;
@@ -93,7 +93,7 @@ public class P1_Controller : MonoBehaviour {
         }
         else if (Input.GetKey(KeyCode.W) && transform.position == pos)
         {        // Up
-            if(((pos + Vector3.up).y <= initial.y)&& (pos + Vector3.up != P2.transform.position)&&checkDirection(Vector2.up))
+            if((pos + Vector3.up != P2.transform.position)&&checkDirection(Vector2.up))
             {
                 Last_Move = pos;
                 pos += Vector3.up;
@@ -103,7 +103,7 @@ public class P1_Controller : MonoBehaviour {
         }
         else if (Input.GetKey(KeyCode.S) && transform.position == pos)
         {        // Down
-            if (((pos + Vector3.down).y >= initial.y - (border-1)) && (pos + Vector3.down != P2.transform.position)&&checkDirection(Vector2.down))
+            if ((pos + Vector3.down != P2.transform.position)&&checkDirection(Vector2.down))
             {
 
                Last_Move = pos;
@@ -176,9 +176,18 @@ public class P1_Controller : MonoBehaviour {
     {
         if (Item_List.Count <3) // if we still has room
         {
-            Item_List.Add(item.tag);
+            int i = 0;
+            for(; i < 3;++i)
+            {
+                if (!Item_List.ContainsKey(i))
+                {
+                    Item_List[i] = item.tag;
+                    break;
+                }
+            }
+            
             Destroy(item.gameObject);
-           Inventory.transform.GetChild(Item_List.LastIndexOf(item.tag) + 1).GetComponent<Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
+            Inventory.transform.GetChild(i + 1).GetComponent<Image>().sprite = item.GetComponent<SpriteRenderer>().sprite;
         }
     }
 
@@ -187,7 +196,7 @@ public class P1_Controller : MonoBehaviour {
         Debug.Log(Item_List[index]);
         GameObject trap = Instantiate(FindPrefab(Item_List[index]));
         trap.transform.position = this.transform.position;
-        Item_List.Remove(Item_List[index]);
+        Item_List.Remove(index);
         
         Inventory.transform.GetChild(index+1).GetComponent<Image>().sprite = Resources.Load<Sprite>("Item_Empty");
     }

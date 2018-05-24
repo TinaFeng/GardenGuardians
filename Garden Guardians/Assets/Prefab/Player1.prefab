@@ -45,7 +45,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4639843668750902
 Transform:
   m_ObjectHideFlags: 1
@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1142076149105056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.5, y: 3.5, z: 0}
+  m_LocalPosition: {x: -8.5, y: 8.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4905227707959102}
@@ -170,8 +170,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294966779
   Inventory: {fileID: 0}
-  Sensor: {fileID: 0}
-  Bomb: {fileID: 0}
+  Sensor: {fileID: 1776036414913788, guid: b8f069de52bbe2f46be82bbb36ab5ad5, type: 2}
+  Bomb: {fileID: 1029608218763286, guid: 9b68dfc915ad3224aacbd879d53fb828, type: 2}
 --- !u!212 &212842928103951274
 SpriteRenderer:
   m_ObjectHideFlags: 1
