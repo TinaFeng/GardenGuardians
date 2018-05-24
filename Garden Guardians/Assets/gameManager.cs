@@ -72,6 +72,7 @@ public class gameManager : MonoBehaviour {
 
     public void endRound(string winner)
     {
+        timer = 60;
         scrMngr.roundWinner = winner;
         fadeIn();
     }
