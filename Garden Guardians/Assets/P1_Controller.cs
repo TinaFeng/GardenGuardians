@@ -136,6 +136,7 @@ public class P1_Controller : MonoBehaviour {
         {
             //pick up  
             pickup(hit.collider.gameObject);
+            return false;
         }
         if (hit.collider != null && (hit.collider.gameObject.tag == "Walls" || hit.collider.gameObject.tag == "P2"))
         {
