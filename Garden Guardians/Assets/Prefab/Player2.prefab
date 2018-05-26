@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 95355187904055468}
   - component: {fileID: 61461604503632738}
   - component: {fileID: 114167513366098054}
-  - component: {fileID: 114883926657509644}
   m_Layer: 8
   m_Name: Player2
   m_TagString: P2
@@ -170,21 +169,8 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 4294967035
+  Inventory: {fileID: 0}
   gM: {fileID: 0}
---- !u!114 &114883926657509644
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1924842688829920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d02834da7344b8b44b1be08e10d65f4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bomb_prefab: {fileID: 1029608218763286, guid: 9b68dfc915ad3224aacbd879d53fb828,
-    type: 2}
-  bombs: 3
 --- !u!212 &212478443456845420
 SpriteRenderer:
   m_ObjectHideFlags: 1

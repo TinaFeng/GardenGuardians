@@ -16,9 +16,12 @@ public class ItemSpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (this.transform.childCount == 0 && gM.timer <= time -10f)
+		if (gM.timer <= time -10f)
 		{
-			Spawn();
+			if (this.transform.childCount == 0)
+			{
+				Spawn();
+			}
 			time = gM.timer;
 		}
 		

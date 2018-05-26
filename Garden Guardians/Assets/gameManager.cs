@@ -16,18 +16,29 @@ public class gameManager : MonoBehaviour {
     bool start = false;
     public float timer = 60;
     private bool timerEnded = false;
+
+	private string winner;
+
+	private bool ended = false;
     Text time;
 	// Use this for initialization
 	void Start () {
 		elapsed = duration;
         time = GameObject.FindGameObjectWithTag("Timer").GetComponent<Text>();
         scrMngr = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+		scrMngr.p1Score = GameObject.Find("P1Score").GetComponent<Text>();
+		scrMngr.p2Score = GameObject.Find("P2Score").GetComponent<Text>();
+		scrMngr.timer = time;
 	}
 	
 
 	// Update is called once per frame
 	void Update () {
-        if(timer < 0)
+		if (ended)
+		{
+			return;
+		}
+        if(timer < 0 && !timerEnded)
         {
             timerEnded = true;
             endRound("P1");
@@ -41,7 +52,7 @@ public class gameManager : MonoBehaviour {
                 time.color = Color.red;
             }
         }
-		if (fadeWait > 0)
+		else if (fadeWait > 0)
 		{
 			fadeWait-= Time.deltaTime;
 		}
@@ -59,8 +70,19 @@ public class gameManager : MonoBehaviour {
 		else
 		{
 			if (!fadein)
+			{
 				GetComponent<Light>().enabled = false;
-            start = true;
+				start = true;
+
+			}
+			else if (!ended)
+			{
+				ended = true;
+				scrMngr.roundWinner = winner;
+			}
+			
+			
+            
 		}
 	}
 
@@ -70,9 +92,17 @@ public class gameManager : MonoBehaviour {
 		fadein = true;
 	}
 
-    public void endRound(string winner)
+    public void endRound(string w)
     {
-        scrMngr.roundWinner = winner;
-        fadeIn();
+		if (start)
+		{
+			winner = w;
+			start = false;
+			elapsed = 0;
+			
+			scrMngr.updateTimer(w=="P1");
+		
+			fadeIn();
+		}
     }
 }

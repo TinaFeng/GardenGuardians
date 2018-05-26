@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
 
+    public Text p1Score, p2Score, timer;
     private int p1Wins = 0, p2Wins = 0, totalMatches = 0;
     public string roundWinner = "";
     private bool flipped = false;
     private static bool alreadyExists = false;
+    
 
     void Awake()
     {
@@ -38,6 +41,7 @@ public class ScoreManager : MonoBehaviour {
         }
         else
         {
+            Debug.Log(" wins a round.");
             OnGameEnd(gameEnd());
         }
         
@@ -47,11 +51,12 @@ public class ScoreManager : MonoBehaviour {
     {
         if(winner != "tie")
         {
-            Debug.Log(winner + " wins!");
+            Debug.Log(winner + " wins a round.");
+            timer.text = (winner + " wins!");
         }
         else
         {
-            Debug.Log("Tie game.");
+            timer.text = ("Tie game.");
         }
         
     }
@@ -93,11 +98,13 @@ public class ScoreManager : MonoBehaviour {
         {
             if (roundWinner == "P1")
             {
+                roundWinner = "";
                 winRound(flipped ? "P2" : "P1");
                 resetLevel();
             }
             else if (roundWinner == "P2")
             {
+                roundWinner = "";
                 winRound(flipped ? "P1" : "P2");
                 resetLevel();
             }
@@ -106,5 +113,21 @@ public class ScoreManager : MonoBehaviour {
                 Debug.LogError("\"" + roundWinner + " \" is an invalid string value for roundWinner variable in ScoreManager.");
             }
         }
+
+        p1Score.text = (flipped ? "P2: " + p2Wins :  "P1: " + p1Wins);
+        p2Score.text = (!flipped ? "P2: " + p2Wins :  "P1: " + p1Wins);
+
 	}
+
+    public void updateTimer(bool p1)
+    {
+        p1 = (flipped? !p1: p1);
+        if (totalMatches < 3)
+        {
+            
+            timer.text = (p1 ? "P1":"P2") + " scores! Switch places!";
+        }
+        else
+            timer.text = (p1 ? "P1":"P2") + " scores!";
+    }
 }
