@@ -45,6 +45,10 @@ public class Bomb_Behavior : MonoBehaviour {
                 {
                     c.enabled = true;
                 }
+                foreach (SpriteRenderer c in transform.GetComponentsInChildren<SpriteRenderer>())
+                {
+                    c.enabled = true;
+                }
                 boom = true;
                 explosion_countdown += effects_countdown;
             }

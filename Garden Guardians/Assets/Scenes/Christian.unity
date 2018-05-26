@@ -857,14 +857,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114167513366098054, guid: 459bf54e67f75c0469a0d456945af050,
         type: 2}
-      propertyPath: gM
-      value: 
-      objectReference: {fileID: 200223671}
-    - target: {fileID: 114167513366098054, guid: 459bf54e67f75c0469a0d456945af050,
-        type: 2}
       propertyPath: Inventory
       value: 
       objectReference: {fileID: 1263821558}
+    - target: {fileID: 114167513366098054, guid: 459bf54e67f75c0469a0d456945af050,
+        type: 2}
+      propertyPath: gM
+      value: 
+      objectReference: {fileID: 200223671}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 459bf54e67f75c0469a0d456945af050, type: 2}
   m_IsPrefabParent: 0
